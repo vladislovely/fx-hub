@@ -20,7 +20,7 @@ final class RateFetcher
                     throw $e;
                 }
                 $metrics->increment('rates.retry');
-                $delay = 200 * $attempt;
+                $delay = 100 * 2 ** $attempt;
                 usleep($delay * 1000);
             }
         }

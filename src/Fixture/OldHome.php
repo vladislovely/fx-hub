@@ -10,15 +10,4 @@ final class OldHome
     {
         return 'keep';
     }
-
-    public function calculateDelay(int $attempt): int
-    {
-        $base = 100;
-        $delay = $base * (2 ** $attempt);
-        if ($delay > 5000) {
-            $delay = 5000;
-        }
-
-        return $delay;
-    }
 }

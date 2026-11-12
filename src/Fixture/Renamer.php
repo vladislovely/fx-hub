@@ -6,7 +6,7 @@ namespace App\Fixture;
 
 final class Renamer
 {
-    public function computeBackoff(int $attempt, int $cap): int
+    public function computeDelaySeconds(int $attempt, int $cap): int
     {
         $wait = 50;
         for ($i = 0; $i < $attempt; ++$i) {

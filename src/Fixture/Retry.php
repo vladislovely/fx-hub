@@ -14,6 +14,6 @@ final class Retry
                 return $result;
             }
         }
-        throw new \RuntimeException('Gave up after '.$attempts.' attempts');
+        return null;
     }
 }

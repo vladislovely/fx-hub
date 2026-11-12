@@ -18,3 +18,10 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # ReviewLens fixture: stale service definitions
+    App\Fixture\LegacyThing: ~
+    app.renamer_job:
+        class: App\Fixture\Renamer
+        calls:
+            - 'App\Fixture\Renamer::computeBackoff'

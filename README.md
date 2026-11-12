@@ -11,3 +11,7 @@
 ## License
 
 FX Hub is available under the MIT License.
+
+## ReviewLens fixture
+
+Legacy handler: `App\Fixture\LegacyThing`.

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Fixture;
 
 use Psr\Log\LoggerInterface;
+use Stringable;
 
 final class Imports
 {

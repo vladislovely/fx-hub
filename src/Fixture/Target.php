@@ -23,7 +23,7 @@ final class Target
         return $delay + $jitter;
     }
 
-    public function draw(array $rows, string $sep): string
+    public function draw(array $rows, string $glue): string
     {
         $cells = [];
         foreach ($rows as $row) {
@@ -34,7 +34,7 @@ final class Target
             $label = ucfirst(strtolower($label));
             $cells[] = '<td>'.htmlspecialchars($label).'</td>';
         }
-        $line = implode($sep, $cells);
+        $line = implode($glue, $cells);
         if ('' === $line) {
             $line = '<td>empty</td>';
         }

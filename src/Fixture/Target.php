@@ -89,5 +89,4 @@ final class Target
 
         return $total;
     }
->>>>>>> test/reviewlens-fixture-base
 }

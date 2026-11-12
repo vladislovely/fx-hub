@@ -8,7 +8,7 @@ final class Comments
 {
     public function attempt(callable $call): mixed
     {
-        // retry once
+        // retry once, then give up
         try {
             return $call();
         } catch (\Throwable) {

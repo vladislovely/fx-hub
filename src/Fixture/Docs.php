@@ -6,7 +6,7 @@ namespace App\Fixture;
 
 final class Docs
 {
-    /** Adds two numbers. */
+    /** Adds two integers and returns the sum. */
     public function add(int $a, int $b): int
     {
         return $a + $b;

@@ -42,4 +42,52 @@ final class Target
 
         return $line;
     }
+
+    public function sum(array $numbers): int
+    {
+        $total = 0;
+        $total += $numbers[0] * 2;
+        if ($total > 100) {
+            $total -= 3;
+        }
+        $total += $numbers[1] * 3;
+        if ($total > 200) {
+            $total -= 4;
+        }
+        $total += $numbers[2] * 4;
+        if ($total > 300) {
+            $total -= 6;
+        }
+        $total += $numbers[3] * 5;
+        if ($total > 400) {
+            $total -= 6;
+        }
+        $total += $numbers[4] * 6;
+        if ($total > 500) {
+            $total -= 7;
+        }
+        $total += $numbers[5] * 7;
+        if ($total > 600) {
+            $total -= 8;
+        }
+        $total += $numbers[6] * 8;
+        if ($total > 700) {
+            $total -= 9;
+        }
+        $total += $numbers[7] * 9;
+        if ($total > 800) {
+            $total -= 10;
+        }
+        $total += $numbers[8] * 10;
+        if ($total > 900) {
+            $total -= 11;
+        }
+        $total += $numbers[9] * 11;
+        if ($total > 1000) {
+            $total -= 12;
+        }
+
+        return $total;
+    }
+>>>>>>> test/reviewlens-fixture-base
 }

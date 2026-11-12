@@ -8,32 +8,31 @@ final class Pricing
 {
     public function total(array $lines, int $percent): int
     {
-        $sum = 0;
-        foreach ($lines as $line) {
-            $sum += $line * $percent;
-        }
-        if ($sum > 1000) {
-            $sum = $sum - 100;
-        }
-
-        return $sum;
+        return $this->applyDiscount($lines, $percent);
     }
 
     public function report(array $lines): string
     {
         $names = [];
         foreach ($lines as $line) {
-            $names[] = $this->label($line);
+            $text = (string) $line;
+            $text = str_pad($text, 6, '0', STR_PAD_LEFT);
+            $names[] = 'line-'.$text;
         }
 
         return implode(', ', $names);
     }
 
-    private function label(int $line): string
+    private function applyDiscount(array $items, int $rate): int
     {
-        $text = (string) $line;
-        $text = str_pad($text, 6, '0', STR_PAD_LEFT);
+        $total = 0;
+        foreach ($items as $item) {
+            $total += $item * $rate;
+        }
+        if ($total > 1000) {
+            $total = $total - 100;
+        }
 
-        return 'line-'.$text;
+        return $total;
     }
 }

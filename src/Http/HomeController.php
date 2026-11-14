@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Http;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -9,14 +9,14 @@ use Nelmio\ApiDocBundle\Attribute\Security;
 use Symfony\Component\Routing\Attribute\Route;
 use OpenApi\Attributes as OA;
 
-final class IndexController extends AbstractController
+final class HomeController extends AbstractController
 {
     #[Route('/api/index', methods: ['GET'])]
     public function index(): JsonResponse
     {
         return $this->json([
             'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/IndexController.php',
+            'path' => 'src/Controller/HomeController.php',
         ]);
     }
 }
